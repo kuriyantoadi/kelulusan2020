@@ -19,13 +19,13 @@
         </div>
         <div class="col-md-6">
           <center>
-            <h2 style="margin-top:  25px;"><b>SMK Negeri 1 Kragilan</b></h2>
+            <h4 style="margin-top:  25px;"><b>SMK Negeri 1 Kragilan</b></h4>
           </center>
           <center>
-            <h2><b>Tampil Kelulusan Siswa</b></h4>
+            <h4><b>Tampil Kelulusan Siswa</b></h4>
           </center>
           <center>
-            <h2><b>Tahun Pelajaran 2019/2020</b></h4>
+            <h4><b>Tahun Pelajaran 2019/2020</b></h4>
           </center>
           <br>
           <!-- font ganti jenis -->

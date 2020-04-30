@@ -22,13 +22,13 @@
         </div>
         <div class="col-md-6">
           <center>
-            <h2 style="margin-top:  25px;"><b>SMK Negeri 1 Kragilan</b></h2>
+            <h4 style="margin-top:  25px;"><b>SMK Negeri 1 Kragilan</b></h4>
           </center>
           <center>
-            <h2><b>Tampil Kelulusan Siswa</b></h4>
+            <h4><b>Tampil Kelulusan Siswa</b></h4>
           </center>
           <center>
-            <h2><b>Tahun Pelajaran 2019/2020</b></h4>
+            <h4><b>Tahun Pelajaran 2019/2020</b></h4>
           </center>
           <br>
           <!-- font ganti jenis -->
@@ -37,6 +37,19 @@
           <center><img style="margin-bottom:  80px; margin-top:  25px;" class="img-fluid" src="../images/logo-smkn1.png" />
         </div>
       </div>
+
+      <div class="form-group">
+        <div class="col-sm-7">
+          <a href="../../logout.php" type="button" class="btn btn-danger">Logout</a>
+        </div>
+        <label class="control-label col-sm-2" for="email">Cari Peserta Calon Peserta Didik :</label>
+        <div class="col-sm-3">
+          <input type='text' class="form-control"  id='input' onkeyup='searchTable()'>
+        </div>
+
+
+      </div>
+
       <table class="table table-bordered table-hover" id="domainsTable">
       <thead>
         <tr>
