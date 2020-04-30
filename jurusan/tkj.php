@@ -19,7 +19,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-3">
-          <center><img style="margin-top: 25px;" src="../images/logo-banten.png" />
+          <center><img style="margin-bottom:  80px; margin-top:  25px;" class="img-fluid" src="../images/logo-smkn1.png" />
         </div>
         <div class="col-md-6">
           <center>
@@ -34,9 +34,7 @@
           <br>
           <!-- font ganti jenis -->
         </div>
-        <div class="col-md-3">
-          <center><img style="margin-bottom:  80px; margin-top:  25px;" class="img-fluid" src="../images/logo-smkn1.png" />
-        </div>
+        
       </div>
 
       <div class="form-group">
