@@ -43,8 +43,18 @@ if ($cek > 0) {
 
     } elseif ($login['kelas']=="otkp2") {
         $_SESSION['username'] = $username;
-        $_SESSION['status'] = "otkp1";
+        $_SESSION['status'] = "otkp2";
         header("location:jurusan/otkp-2.php");
+
+    } elseif ($login['kelas']=="rpl1") {
+        $_SESSION['username'] = $username;
+        $_SESSION['status'] = "rpl1";
+        header("location:jurusan/rpl-1.php");
+
+    } elseif ($login['kelas']=="rpl2") {
+        $_SESSION['username'] = $username;
+        $_SESSION['status'] = "rpl2";
+        header("location:jurusan/rpl-2.php");
 
     } elseif ($login['kelas']=="tkj1") {
         $_SESSION['username'] = $username;
@@ -53,7 +63,7 @@ if ($cek > 0) {
 
     } elseif ($login['kelas']=="tkj2") {
         $_SESSION['username'] = $username;
-        $_SESSION['status'] = "tkj1";
+        $_SESSION['status'] = "tkj2";
         header("location:jurusan/tkj-2.php");
 
     } elseif ($login['kelas']=="tkr1") {
