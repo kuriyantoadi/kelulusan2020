@@ -29,7 +29,7 @@
           <h5 style="margin-top:  25px;"><b>SMK Negeri 1 Kragilan</b></h5>
         </center>
         <center>
-          <h5><b>Tampil Kelulusan Siswa Kelas XII Otomatisasi Tata Kelelola Perkantoran</b></h5>
+          <h5><b>Tampil Kelulusan Siswa Kelas XII Otomatisasi Tata Kelola Perkantoran</b></h5>
         </center>
         <center>
           <h5><b>Tahun Pelajaran 2019/2020</b></h5>

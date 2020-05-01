@@ -1,21 +1,16 @@
-<?php
-  session_start();
-  if ($_SESSION['status']!="otkp1") {
-      header("location:../../index.php?pesan=belum_login");
-  }
-  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>Hasil Kelulusan Kelas XII OTKP </title>
+  <title>Hasil Kelulusan Kelas XII TKJ </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 
-  <script src="../js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../js/jquery-latest.js"></script>
-  <script type="text/javascript" src="../js/jquery.tablesorter.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery-latest.js"></script>
+  <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
 </head>
 
 <body>
@@ -29,7 +24,7 @@
           <h5 style="margin-top:  25px;"><b>SMK Negeri 1 Kragilan</b></h5>
         </center>
         <center>
-          <h5><b>Tampil Kelulusan Siswa Kelas XII Otomatisasi Tata Kelola Perkantoran</b></h5>
+          <h5><b>Tampil Kelulusan Siswa Kelas XII Teknik Komputer Jaringan</b></h5>
         </center>
         <center>
           <h5><b>Tahun Pelajaran 2019/2020</b></h5>
@@ -73,14 +68,14 @@
       </thead>
       <tbody>
         <?php
-      include '../koneksi.php';
+      include 'koneksi.php';
       $no=1;
     $data = mysqli_query($koneksi, "SELECT
       nisn,
       nama,
       kelas,
       status
-      from siswa where kelas='XII OTKP 1' ORDER BY kelas ASC");
+      from tkj where kelas='XII TKJ 2' ORDER BY kelas ASC");
     while ($d = mysqli_fetch_array($data)) {
         ?>
 
