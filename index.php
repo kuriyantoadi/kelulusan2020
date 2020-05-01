@@ -1,170 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
-  <title>Operator PPDB </title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-
-  <script src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/jquery-latest.js"></script>
-  <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+  <title></title>
 </head>
 
 <body>
+  <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="js/bootstrap.min.js"></script>
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+  <script src="js/jquery-latest.js"></script>
+  <script src="" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/login.css">
+  <!-- Include the above in your HEAD tag ---------->
 
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
 
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <center><img style="margin-bottom:  70px; margin-top:  25px;" class="img-fluid" src="images/logo-smkn1.png" />
-      </div>
-      <div class="col-md-6">
-        <center>
-          <h4 style="margin-top:  25px;"><b>SMK Negeri 1 Kragilan</b></h4>
-        </center>
-        <center>
-          <h4><b>Tampil Kelulusan Siswa</b></h4>
-        </center>
-        <center>
-          <h4><b>Tahun Pelajaran 2019/2020</b></h4>
-        </center>
-        <br>
-        <!-- font ganti jenis -->
-      </div>
-
-    </div>
-    <div class="row">
-      <div class="col-sm-8">
-        <a href="" type="button" class="btn btn-info">TKJ</a>
-        <a href="../rpl/index.php" type="button" class="btn btn-info" role="button">RPL</a>
-        <a href="../akl/index.php" type="button" class="btn btn-info">AKL</a>
-        <a href="" type="button" class="btn btn-info">OTKP</a>
-        <a href="../mesin/index.php" type="button" class="btn btn-info">TPM</a>
-        <a href="" type="button" class="btn btn-info">TKR</a>
-      </div>
-
-      <div class="col-sm-4">
-        <input type='text' placeholder="Cari Nama Siswa" class="form-control" id='input' onkeyup='searchTable()'>
-      </div>
-    </div>
-<br>
-    <table class="table table-bordered table-hover" id="domainsTable">
-      <thead>
-        <tr>
-          <th>
-            <center>NISN Siswa
-          </th>
-          <th>
-            <center>Nama Siswa
-          </th>
-          <th>
-            <center>Kelas
-          </th>
-          <th>
-            <center>Status
-          </th>
-
-        </tr>
-      </thead>
-      <tbody>
+      <!-- Icon -->
+      <div class="fadeIn first">
         <?php
-      include 'koneksi.php';
-    $halperpage = 10;
-    $page = isset($_GET["halaman"]) ? (int)$_GET["halaman"] : 1;
-    $mulai = ($page>1) ? ($page * $halperpage) - $halperpage : 0;
-    $result = mysqli_query($koneksi, "SELECT
-      nisn,
-      nama,
-      kelas,
-      status
-      FROM siswa");
-    $total = mysqli_num_rows($result);
-    $pages = ceil($total/$halperpage);
+                if (isset($_GET['pesan'])) {
+                    if ($_GET['pesan'] == "gagal") {
+                        echo "
+						<div class='alert alert-danger' role='alert'>
+							<center>Maaf Password anda salah!
+						</div>";
+                    } elseif ($_GET['pesan'] == "logout") {
+                        echo "
+						<div class='alert alert-warning' role='alert'>
+							<center>Anda Berhasil Logout
+						</div>
+						";
+                    } elseif ($_GET['pesan'] == "belum_login") {
+                        echo "
+						<div class='alert alert-danger' role='alert'>
+							<center>Maaf anda harus login dulu
+						</div>";
+                    }
+                }
+                ?>
+        <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="" />
+      </div>
 
-    $data = mysqli_query($koneksi, "SELECT
-      nisn,
-      nama,
-      kelas,
-      status
-      from siswa LIMIT $mulai, $halperpage ");
-    $no = $mulai+1;
+      <!-- Login Form -->
 
+      <form method="post" action="cek_login.php">
+        <input type="text" id="login" class="fadeIn second" name="username" placeholder="Kode Kelas">
+        <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+        <input type="submit" class="fadeIn fourth" >
+      </form>
 
-    while ($d = mysqli_fetch_array($data)) {
-        ?>
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
 
-        <tr>
-          <td>
-            <center><?php echo $d['nisn']; ?>
-          </td>
-          <td>
-            <center><?php echo $d['nama']; ?>
-          </td>
-          <td>
-            <center><?php echo $d['kelas']; ?>
-          </td>
-          <td>
-            <center><?php echo $d['status']; ?>
-          </td>
-        </tr>
-
-        <?php
-    } ?>
-      </tbody>
-    </table>
-    <div>
-      <?php for ($i=1; $i<=$pages ; $i++) {
-        ?>
-      <a class="btn btn-info btn-md" href="?halaman=<?php echo $i; ?>"><?php echo $i; ?></a>
-      <?php
-    } // database
-
-  ?>
     </div>
   </div>
-  <script>
-    $(document).ready(function() {
-      $("#domainsTable").tablesorter({
-        sortList: [
-          [3, 1],
-          [2, 0]
-        ]
-      });
-    });
-
-    function searchTable() {
-      var input;
-      var saring;
-      var status;
-      var tbody;
-      var tr;
-      var td;
-      var i;
-      var j;
-      input = document.getElementById("input");
-      saring = input.value.toUpperCase();
-      tbody = document.getElementsByTagName("tbody")[0];;
-      tr = tbody.getElementsByTagName("tr");
-      for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td");
-        for (j = 0; j < td.length; j++) {
-          if (td[j].innerHTML.toUpperCase().indexOf(saring) > -1) {
-            status = true;
-          }
-        }
-        if (status) {
-          tr[i].style.display = "";
-          status = false;
-        } else {
-          tr[i].style.display = "none";
-        }
-      }
-    }
-  </script>
-
 </body>
 
 </html>
