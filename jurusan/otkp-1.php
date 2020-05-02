@@ -26,13 +26,16 @@
     <div class="row">
       <div class="col-md-12">
         <center>
-          <h5 style="margin-top:  25px;"><b>SMK Negeri 1 Kragilan</b></h5>
+          <h5 style="margin-top:  25px;"><b>PENGUMUMAN KELULUSAN KELAS XII</b></h5>
         </center>
         <center>
-          <h5><b>Tampil Kelulusan Siswa Kelas XII Otomatisasi Tata Kelola Perkantoran</b></h5>
+          <h5><b>SMKN 1 KRAGILAN</b></h5>
         </center>
         <center>
-          <h5><b>Tahun Pelajaran 2019/2020</b></h5>
+          <h5><b>TAHUN PELAJARAN 2019/2020</b></h5>
+        </center>
+        <center>
+          <h5>Kompetensi Keahlian: Otomatisasi dan Tata Kelola Perkantoran (OTKP)</h5>
         </center>
         <br>
         <!-- font ganti jenis -->
